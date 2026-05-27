@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="modalLot">
+
+    <div class="modal fade" id="conflictModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Conflicto detectado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    Ya existe un lote abierto con esta materia.
+                    ¿Quieres cerrarlo y abrir este?
+                </div>
+
+                <div class="modal-footer">
+
+                    <form id="forceForm" method="post">
+                        <input type="hidden" name="forcar" value="true"/>
+
+                        <button type="submit" class="btn btn-danger">
+                            Sí, forzar
+                        </button>
+                    </form>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</html>

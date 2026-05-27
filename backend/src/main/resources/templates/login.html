@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTraza - Iniciar Sesión</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    
+    <style>
+        /* Estilos específicos de coherencia visual para el login */
+        body.login-body {
+            background-color: #efebe9;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            margin: 0;
+        }
+
+        .login-split-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #fff3e0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .login-info-panel {
+            background: linear-gradient(135deg, #4e342e, #8d6e63);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .login-info-panel h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .login-info-panel p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .login-form-panel {
+            padding: 50px;
+            color: #3e2723;
+        }
+
+        .form-input-brown {
+            border: 1px solid #d7b899;
+            border-radius: 10px;
+            padding: 12px;
+            color: #3e2723;
+        }
+
+        .form-input-brown:focus {
+            outline: none;
+            border-color: #8d6e63;
+            box-shadow: 0 0 5px rgba(141, 110, 99, 0.4);
+        }
+
+        label.fw-bold {
+            margin-bottom: 8px;
+        }
+
+        .alert {
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .alert-error {
+            background-color: #8d5a4a;
+            color: white;
+        }
+        .alert-success {
+            background-color: #8d6e63;
+            color: white;
+        }
+
+        /* 👁️ Ajustes para que el botón del ojo encaje con tu diseño redondeado */
+        .input-group .form-input-brown {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .input-group .btn-outline-secondary {
+            border-color: #d7b899;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            color: #3e2723;
+        }
+        .input-group .btn-outline-secondary:hover {
+            background-color: #efebe9;
+            color: #3e2723;
+        }
+
+    </style>
+</head>
+<body class="login-body">
+
+    <div class="login-split-container container-fluid p-0">
+        <div class="row g-0">
+            
+            <div class="col-md-6 login-info-panel d-none d-md-flex">
+                <h1>EasyTraza</h1>
+            </div>
+            
+            <div class="col-md-6 login-form-panel">
+                <h3 class="mb-4 text-center d-md-none" style="font-weight: 700;">EasyTraza</h3>
+                <h4 class="mb-4" style="font-weight: 600;">Inicio de sesión</h4>
+
+                <div th:if="${param.error}" class="alert alert-error mb-4">
+                    Correo o contraseña incorrectos.
+                </div>
+                
+                <div th:if="${param.logout}" class="alert alert-success mb-4">
+                    Has cerrado sesión correctamente.
+                </div>
+
+                <form th:action="@{/login}" method="post">
+                    
+                    <div class="mb-4">
+                        <label for="username" class="form-label fw-bold">Correo electrónico</label>
+                        <input type="email" id="username" name="username" class="form-control form-input-brown" placeholder="ejemplo@easytraza.com" required autofocus>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <label for="contrasenyaNueva" class="form-label fw-bold">Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" id="contrasenyaNueva" name="password" class="form-control form-input-brown" placeholder="Introduce tu contraseña..." required>
+                            
+                            <button class="btn btn-outline-secondary" type="button" id="btnTogglePassword">
+                                <svg id="iconoOjo" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-brown btn-brown-primary btn-brown-lg w-100 py-2">
+                        Iniciar sesión
+                    </button>
+                    
+                    <div class="text-center mt-3">
+                        <a href="/recuperar-password" class="text-decoration-none small" style="color: #8d6e63; font-weight: 500;">¿Has olvidado tu contraseña?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/contrasenya.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div th:fragment="modalClients">
+
+    <!-- FORM OCULTO -->
+    <form id="deleteClientForm" method="post"></form>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="deleteClientModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p id="modalClientText">
+                        ¿Seguro que quieres eliminar este cliente?
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="btn btn-danger" id="confirmDeleteClient">
+                        Eliminar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

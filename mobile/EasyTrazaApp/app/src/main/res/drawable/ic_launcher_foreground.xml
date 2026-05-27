@@ -1,0 +1,49 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group android:scaleX="0.67"
+      android:scaleY="0.67"
+      android:translateX="17.82"
+      android:translateY="17.82">
+
+      <!-- Fondo crema/beige -->
+      <path
+          android:fillColor="#F7F3F0"
+          android:pathData="M0,0h108v108h-108z"/>
+
+      <!-- Ruta de trazabilidad (Línea) -->
+      <path
+          android:strokeColor="#5D4037"
+          android:strokeWidth="3.5"
+          android:strokeLineCap="round"
+          android:strokeLineJoin="round"
+          android:pathData="M 28,68 L 45,48 L 62,58 L 82,28" />
+
+      <!-- Nodos de la ruta (Círculos) -->
+      <!-- Nodo 1 -->
+      <path android:fillColor="#5D4037" android:pathData="M 28,68 m -4,0 a 4,4 0 1,1 8,0 a 4,4 0 1,1 -8,0" />
+      <!-- Nodo 2 -->
+      <path android:fillColor="#5D4037" android:pathData="M 45,48 m -4,0 a 4,4 0 1,1 8,0 a 4,4 0 1,1 -8,0" />
+      <!-- Nodo 3 -->
+      <path android:fillColor="#5D4037" android:pathData="M 62,58 m -4,0 a 4,4 0 1,1 8,0 a 4,4 0 1,1 -8,0" />
+      <!-- Nodo 4 (Final de la trazabilidad y base de la espiga) -->
+      <path android:fillColor="#5D4037" android:pathData="M 82,28 m -4,0 a 4,4 0 1,1 8,0 a 4,4 0 1,1 -8,0" />
+
+      <!-- Espiga de Trigo Minimalista -->
+      <!-- Grano 1 (Superior) -->
+      <path
+          android:fillColor="#8D6E63"
+          android:pathData="M 82,28 Q 88,40 70,50 Q 60,38 82,28 Z" />
+      <!-- Grano 2 (Medio) -->
+      <path
+          android:fillColor="#8D6E63"
+          android:pathData="M 70,50 Q 76,62 58,72 Q 48,60 70,50 Z" />
+      <!-- Grano 3 (Inferior) -->
+      <path
+          android:fillColor="#8D6E63"
+          android:pathData="M 58,72 Q 64,84 46,94 Q 36,82 58,72 Z" />
+
+  </group>
+</vector>

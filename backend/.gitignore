@@ -1,0 +1,93 @@
+# ==========================================
+# 1. SISTEMA OPERATIVO
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# 2. ENTORNOS DE DESARROLLO (IDEs)
+# ==========================================
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+gen/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# ==========================================
+# 3. BACKEND (Spring Boot / Java / Maven)
+# ==========================================
+# Ignorar la carpeta de compilación de Maven
+backend/target/
+target/
+
+# Ignorar binarios de Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Ignorar archivos de logs
+*.log
+backend/logs/
+backend/log/
+
+# Mantener los wrappers de Maven pero ignorar el .jar descargado
+!.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ==========================================
+# 4. MOBILE (Android / Gradle)
+# ==========================================
+# Ignorar carpetas de compilación de Gradle
+mobile/EasyTrazaApp/build/
+mobile/EasyTrazaApp/app/build/
+.gradle/
+build/
+
+# Archivos autogenerados de Android
+*.apk
+*.ap_
+*.aab
+*.dex
+
+# Archivos de perfilado y capturas de Android Studio
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+
+# ==========================================
+# 5. SECRETOS Y VARIABLES DE ENTORNO
+# ==========================================
+# ¡IMPORTANTE! Aquí evitamos subir claves como la de Groq
+.env
+.env.*
+# Si usas un properties separado para claves en Spring Boot:
+application-secret.properties
+application-dev.properties
+# Gradle local properties (suele contener la ruta del SDK y contraseñas locales)
+mobile/EasyTrazaApp/local.properties
